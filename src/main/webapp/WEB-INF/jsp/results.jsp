@@ -46,7 +46,7 @@
 
         <br />
 
-        <select name="filters" class="form-control" multiple>
+        <select name="filters" class="form-control input-sm" >
             <c:choose>
                 <c:when test="${filters != null}">
                     <c:forEach items="${filters}" var="concept">
@@ -65,9 +65,11 @@
 
         <br />
         <input type="submit" value="Apply Filter"/>
+
+        <input type="button" value="Clear Filter" onclick="window.location.href='/results'">
     </form>
     <br />
-        <input type="button" value="Clear Filter" onclick="window.location.href='/results'">
+        <!-- <input type="button" value="Clear Filter" onclick="window.location.href='/results'"> -->
            <%-- <c:choose>
                 <c:when test="${filters != null}">
                     <c:forEach items="${filters}" var="concept">
@@ -90,7 +92,7 @@
                 <thead>
                 <tr>
                     <th>Resource</th>
-                    <th>Concepts</th>
+                    <!-- <th>Concepts</th> -->
                 </tr>
                 </thead>
                 <c:forEach items="${items}" var="item">
@@ -162,7 +164,7 @@
                                 </c:choose>
                             </table>
                         </td>
-                        <td>
+                        <!-- <td> Apollo Edit
                             <c:choose>
                                 <c:when test="${item.concepts!=null}">
                                     <table class="table table-condensed">
@@ -183,8 +185,29 @@
                                     Resource not tagged
                                 </c:otherwise>
                             </c:choose>
-                        </td>
+                        </td> -->
                     </tr>
+                    <c:choose>
+                        <c:when test="${item.concepts!=null}">
+                            <table class="table table-condensed">
+                            <!-- <thead> -->
+                            <tr>
+                                <th>Related Concepts</th>
+                                <th>Relation Strength</th>
+                            </tr>
+                            <!-- </thead> -->
+                            <c:forEach items="${item.concepts}" var="concept">
+                                <tr>
+                                    <td><a href="/home?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                        </c:when>
+                        <c:otherwise>
+                            Resource not tagged
+                        </c:otherwise>
+                    </c:choose>
+                    <hr style="height:1px;border:none;color:#333;background-color:#333;" />
                 </c:forEach>
             </table>
 

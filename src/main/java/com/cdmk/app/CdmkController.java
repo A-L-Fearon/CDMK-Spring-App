@@ -189,6 +189,11 @@ public class CdmkController implements ServletContextAware {
         return "api";
     }
 
+    @RequestMapping(value = "/brochure", method = RequestMethod.GET)
+    public String brochurePage(HttpServletRequest request) {
+        return "brochure";
+    }
+
     @RequestMapping(value = "/submit", method = RequestMethod.GET)
     public String submit(HttpServletRequest request) {
         return "submit";

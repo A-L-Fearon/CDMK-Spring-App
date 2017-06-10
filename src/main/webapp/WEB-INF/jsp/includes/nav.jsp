@@ -23,7 +23,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="background">CDMK Background</a></li>
                         <li><a href="usecases">CDMK Use-Cases</a></li>
-                        <li><a href="">CDMK Brochure</a></li>
+                        <li><a href="brochure">CDMK Brochure</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

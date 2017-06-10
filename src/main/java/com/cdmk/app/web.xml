@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="cdmk" version="2.5">
+
+    <display-name>CDMK</display-name>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+
+
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.fallbackLocale</param-name>
+        <param-value>en</param-value>
+    </context-param>
+
+
+    <!-- Main Spring dispatcher servlet -->
+    <servlet>
+        <servlet-name>spring-dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>spring-dispatcher</servlet-name>
+        <url-pattern>/home</url-pattern>
+        <url-pattern>/submit</url-pattern>
+        <url-pattern>/api</url-pattern>
+        <url-pattern>/share</url-pattern>
+        <url-pattern>/partners</url-pattern>
+        <url-pattern>/usecases</url-pattern>
+        <url-pattern>/results</url-pattern>
+        <url-pattern>/background</url-pattern>
+        <url-pattern>/brochure</url-pattern>
+        <url-pattern>/cdmk/*</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <!-- JSP welcome file that will redirect to a Spring call -->
+        <welcome-file>welcomefile.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

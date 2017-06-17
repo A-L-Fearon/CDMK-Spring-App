@@ -21,6 +21,8 @@
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
 
+    <link href="css/suggestion-styles.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]> 324x245
@@ -45,8 +47,9 @@
                 <h2>COMPREHENSIVE DISASTER MANAGEMENT IN THE CARIBBEAN</h2>
                 <form:form role="search" id="getConceptsForm" action="home" method="POST">
                     <div class="form-group">
-                        <input id="search_field" name="text" type="text" class="input-lg" placeholder="Search the CDM Index...">
+                        <input id="autocomplete" name="text" type="text" class="input-lg" placeholder="Search the CDM Index...">
                     </div>
+
                 </form:form>
             </div>
         </div>
@@ -154,6 +157,8 @@
     }
 </script>
 
+    <script src="js/jquery.autocomplete.min.js"></script>
+    <script src="js/currency-autocomplete.js"></script>
 </body>
 
 </html>

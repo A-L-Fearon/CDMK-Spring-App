@@ -24,6 +24,8 @@
 
     <link href="css/business-frontpage.css" rel="stylesheet">
 
+    <link href="css/suggestion-styles.css" rel="stylesheet">
+
     <style>
         .noBorder {
             border:none ! important;
@@ -40,6 +42,24 @@
     <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
             <h3>Resources related to '${concept}' from the CDM Content Pool:</h3>
 
+    <c:choose>
+        <c:when test="${searched != null}">
+             <c:forEach items="${searched}" var="search">
+                <button type="button" class="btn btn-lg btn-default">Filter: ${search}</button>
+             </c:forEach>
+        </c:when>
+    </c:choose>
+
+    <!-- <div class="inner no-radius"> -->
+        <!-- Large Buttons Start -->
+        <!-- <button type="button" class="btn btn-lg btn-default">Default</button>
+        <button type="button" class="btn btn-lg btn-primary">Primary</button>
+        <button type="button" class="btn btn-lg btn-success">Success</button>
+        <button type="button" class="btn btn-lg btn-info">Info</button>
+        <button type="button" class="btn btn-lg btn-warning">Warning</button>
+        <button type="button" class="btn btn-lg btn-danger">Danger</button> -->
+        <!-- Large Buttons End -->
+    <!-- </div> -->
 
     <form action="/results" method="post">
         Choose one or more concepts to filter by:
@@ -104,11 +124,21 @@
                                 <c:choose>
                                     <c:when test="${item.title!=null}">
                                         <c:choose>
-                                            <c:when test="${item.url!=null}">
-                                                <tr><td><a href="${item.url.get(0)}">${item.title.get(0)}</a></td></tr>
+                                            <c:when test="${item.url!=null}"><!--  -->
+                                                <tr>
+                                                    <td>
+                                                        <a href="${item.url.get(0)}" class="resource-title">${item.title.get(0)}</a>
+                                                    </td>
+                                                </tr>
                                             </c:when>
                                             <c:when test="${item.file!=null}">
-                                                <tr><td><a href="<c:url value="/cdmk${item.file.get(0)}"/>">${item.title.get(0)}</a></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <a class="resource-title" href="<c:url value="/cdmk${item.file.get(0)}"/>" >
+                                                            ${item.title.get(0)}
+                                                        </a>
+                                                    </td>
+                                                </tr>
                                                 <%--<td><iframe src="${item.file.get(0)}"></iframe></td>--%>
                                                 <%--<a href="/ViewerJS/#..${item.file.get(0)}">--%>
                                             </c:when>
@@ -189,24 +219,133 @@
                     </tr>
                     <c:choose>
                         <c:when test="${item.concepts!=null}">
-                            <table class="table table-condensed">
-                            <!-- <thead> -->
-                            <tr>
+                        <table class="table table-condensed">
+                            
+                            <!-- <tr>
                                 <th>Related Concepts</th>
                                 <th>Relation Strength</th>
-                            </tr>
-                            <!-- </thead> -->
-                            <c:forEach items="${item.concepts}" var="concept">
-                                <tr>
+                            </tr> -->
+                            
+                            <!-- <c:forEach items="${item.concepts}" var="concept"> -->
+                               <!--  <tr>
                                     <td><a href="/home?q=${concept.prefLabel}">${concept.prefLabel}</a></td><td><meter value="${concept.score/100}">${concept.score}%</meter></td>
-                                </tr>
-                            </c:forEach>
+                                </tr> -->
+                            <!-- </c:forEach> -->
                         </table>
                         </c:when>
                         <c:otherwise>
                             Resource not tagged
                         </c:otherwise>
                     </c:choose>
+
+                    <div>
+                        <h1 class="related-head"> Related Concepts </h1>
+                    </div>
+
+                    <c:choose>
+                        <c:when test="${item.concepts!=null}">
+
+                            <section class="tiles">
+                                <c:forEach items="${item.concepts}" var="concept">
+                                    <article class="style2">
+                                        <span class="image">
+                                            <img src="images/pic02.jpg" alt="" style="height:50px;"/><!-- width:300px; -->
+                                        </span>
+                                        <a href="/home?q=${concept.prefLabel}">
+                                            <h3>${concept.prefLabel}</h3>
+                                            <div class="content">
+                                               <meter low=".25" high=".50" optimum=".75" value="${concept.score/100}">${concept.score}%</meter>
+                                            </div>
+                                        </a>
+                                    </article>
+                                                               
+                                </c:forEach>
+                            </section>
+                        </c:when>
+                        <c:otherwise>
+                            Resource not tagged
+                        </c:otherwise>
+                    </c:choose>
+
+                   <!--  <section class="tiles">
+                        <article class="style1">
+                            <span class="image">
+                                <img src="images/pic02.jpg" alt="" />
+                            </span>
+                            <a href="generic.html">
+                                <h2>Magna</h2>
+                                <div class="content">
+                                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="style2">
+                            <span class="image">
+                                <img src="images/pic02.jpg" alt="" />
+                            </span>
+                            <a href="generic.html">
+                                <h2>Lorem</h2>
+                                <div class="content">
+                                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="style3">
+                            <span class="image">
+                                <img src="images/pic02.jpg" alt="" />
+                            </span>
+                            <a href="generic.html">
+                                <h2>Feugiat</h2>
+                                <div class="content">
+                                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="style4">
+                            <span class="image">
+                                <img src="images/pic02.jpg" alt="" />
+                            </span>
+                            <a href="generic.html">
+                                <h2>Tempus</h2>
+                                <div class="content">
+                                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="style5">
+                            <span class="image">
+                                <img src="images/pic02.jpg" alt="" />
+                            </span>
+                            <a href="generic.html">
+                                <h2>Aliquam</h2>
+                                <div class="content">
+                                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="style6">
+                            <span class="image">
+                                <img src="images/pic02.jpg" alt="" />
+                            </span>
+                            <a href="generic.html">
+                                <h2>Veroeros</h2>
+                                <div class="content">
+                                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="style2">
+                            <span class="image">
+                                <img src="images/pic02.jpg" alt="" />
+                            </span>
+                            <a href="generic.html">
+                                <h2>Ipsum</h2>
+                                <div class="content">
+                                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                                </div>
+                            </a>
+                        </article>
+                    </section> -->
                     <hr style="height:1px;border:none;color:#333;background-color:#333;" />
                 </c:forEach>
             </table>

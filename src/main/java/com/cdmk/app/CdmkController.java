@@ -249,6 +249,7 @@ public class CdmkController implements ServletContextAware {
             }
         }
 
+        request.setAttribute("searched", results);
         request.setAttribute("concept", searchConcept);
         request.setAttribute("filters", filterConcepts);
         request.setAttribute("items", filteredSearchResults);

@@ -24,6 +24,10 @@
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
 
+    <link href="css/suggestion-styles.css" rel="stylesheet">
+
+    <!-- <link href="css/styles-less.css" rel="stylesheet"> -->
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -43,7 +47,7 @@
 
     <div class="container">
 
-        <div class="row">
+        <!-- <div class="row">
             <h4 class="blue-title text-center">Use-Cases for CDMK</h4>
             <p><strong>Case 1 &ndash; Centralized Access to Repository</strong></p>
             <p>Currently, a number of agencies, organisations and individuals across the Caribbean region are developing DRP resources. The problem is that these resources are being developed in isolation and other experts and entities are unaware of what is available. Additionally, because they are being developed independently of each other they may be using different concepts and terms to describe the resources.</p>
@@ -59,8 +63,74 @@
             <p>A number of institutions are required to develop Disaster Recovery Plans within their specific domain, however, these plans are expected to conform to a specific structure. The CDMK will allow these institutions to upload their plans which will then be validated by the system. Any missing sections will be identified and sample plans provided. This ensures the completeness of these plans.</p>
             <p><strong>Case 5 &ndash; Classifying New Documents </strong></p>
             <p>As new resources are made available for sharing they can be tagged and once tagged will be a part of the searchable CDMK repository. Again the tagging will be based on the defined DRP vocabulary is will be consistent with the other resources of the system.</p>
-        </div>
-    </div>
+        </div> -->
+
+        <h3><center>Use-Cases for CDMK</center></h3>
+        <br/>
+        <p>
+            <span class="image left">
+                <img src="images/api1.png" alt="" />
+            </span>
+            <p><strong>Case 1 &ndash; Centralized Access to Repository</strong></p>
+
+            <p>Currently, a number of agencies, organisations and individuals across the Caribbean region are developing DRP resources. The problem is that these resources are being developed in isolation and other experts and entities are unaware of what is available. Additionally, because they are being developed independently of each other they may be using different concepts and terms to describe the resources.</p>
+            <p>CDMK provides <strong>a single point of access</strong> for finding the resources that have been created throughout the region. The development of a DRP vocabulary also provides a consistent set of concepts for describing these resources.</p>
+        </p>
+        <br/>
+        <br/>
+        <p>
+            <span class="image right">
+                <img src="images/api2.png" alt="" />
+            </span>
+           <p><strong>Case 2 &ndash; Searchable Resource Repository</strong></p>
+
+            <p>The Caribbean region has amassed a vast, valuable repository of disaster management resources (e.g. electronic documents, human experts). Unfortunately, these resources are not particularly well-ordered or categorized. They also lack tagging for online searchability, so those looking for resources have no effective way of finding and accessing the wealth of information that is available.</p>
+            <p>CDMK provides a faster, easier and more reliable way of making these disaster management resources searchable &ndash; and findable! CDMK can tag all the reports, articles, scientific documents and other resources instantly. Since the system relies on a defined DRP vocabulary with clearly defined terms and interrelationships, it will automatically use a consistent set of keywords to describe content. This means that resources can be placed in useful clusters and make them all accessible to others.</p>
+            <p>There are a number of DRP resources other than electronic documents and in the same way and the CDMK can act as an expert finder for these resources or institutions. In other words it can be viewed as a searchable directory to the DRP resources available in the region.</p>
+        </p>
+        <br/>
+        <br/>
+        <p>
+            <span class="image left">
+                <img src="images/api3.png" alt="" />
+            </span>
+            <p><strong>Case 3 &ndash; To offer definitions, synonyms and links to resources</strong></p>
+
+            <p>CDMK provides a simple system that allows end users to traverse the structure of the domain and provides a glossary of the concepts defined within the domain. This includes not just the meaning of the concepts but also their synonyms and the hierarchical structure of concepts.</p>
+            <p>This understanding of the domain and its structure is supported though a visualization of the vocabulary which the end users can traverse.</p>
+        <br/>
+        <br/>
+        <p>
+            <span class="image right">
+                <img src="images/api4.png" alt="" />
+            </span>
+            <p><strong>Case 4 &ndash; Check the Completeness of DRPs</strong></p>
+
+            <p>A number of institutions are required to develop Disaster Recovery Plans within their specific domain, however, these plans are expected to conform to a specific structure. The CDMK will allow these institutions to upload their plans which will then be validated by the system. Any missing sections will be identified and sample plans provided. This ensures the completeness of these plans.</p>
+        </p>
+        <br/>
+        <br/>
+        <p>
+            <span class="image left">
+                <img src="images/api5.png" alt="" />
+            </span>
+            <p><strong>Case 5 &ndash; Classifying New Documents </strong></p>
+            <p>As new resources are made available for sharing they can be tagged and once tagged will be a part of the searchable CDMK repository. Again the tagging will be based on the defined DRP vocabulary is will be consistent with the other resources of the system.</p>
+        </p>
+        <br/>
+        <br/>
+        <br/>
+        <p>
+            <span class="image right">
+                <img src="images/api6.png" alt="" />
+            </span>
+            <p><strong> Case 6 &ndash; Value-Added Applications </strong></p>
+            <p>
+            The CDMK provides a fully functional ReST API (Application Programming Interface) that enables the development of other knowledge-based applicationsand information services relating to CDM. One demonstration of this utility is the CDMK Mobile App.
+            </p>
+
+        </p>
+</div>
     <hr>
 
     <h4 class="blue-title text-center">CDMK Implementation and Funding PARTNERS</h4>

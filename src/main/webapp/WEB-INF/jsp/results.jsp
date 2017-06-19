@@ -45,7 +45,7 @@
     <c:choose>
         <c:when test="${searched != null}">
              <c:forEach items="${searched}" var="search">
-                <button type="button" class="btn btn-lg btn-default">Filter: ${search}</button>
+                <button type="button" class="btn btn-filter btn-lg btn-default">Filter: ${search}</button>
              </c:forEach>
         </c:when>
     </c:choose>

@@ -26,6 +26,10 @@
 
     <link href="css/suggestion-styles.css" rel="stylesheet">
 
+    <link href="css/dropdown.min.css" rel="stylesheet">
+
+    <link href="css/transition.min.css" rel="stylesheet">
+
     <style>
         .noBorder {
             border:none ! important;
@@ -66,7 +70,24 @@
 
         <br />
 
-        <select name="filters" class="form-control input-sm" >
+        <!-- <select name="filters" class="form-control input-sm" >
+            <c:choose>
+                <c:when test="${filters != null}">
+                    <c:forEach items="${filters}" var="concept">
+                        <c:choose>
+                            <c:when test="${concept.checked}">
+                                <option>${concept.prefLabel}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option>${concept.prefLabel}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </c:when>
+            </c:choose>
+        </select> -->
+
+        <select name="filters" class="ui fluid search dropdown" multiple="">
             <c:choose>
                 <c:when test="${filters != null}">
                     <c:forEach items="${filters}" var="concept">
@@ -386,6 +407,12 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
+<script src="js/dropdown.min.js"></script>
+<script src="js/transition.min.js"></script>
+
+<script>
+    $('.ui.dropdown').dropdown(); // to init semantic ui multi-search
+</script>
 </body>
 
 </html>
